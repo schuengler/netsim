@@ -1,6 +1,13 @@
 # Prerequisites
 *.d
 
+inet/*
+omnet*/*
+
+results/
+
+.qtenvrc
+
 # Compiled Object files
 *.slo
 *.lo
