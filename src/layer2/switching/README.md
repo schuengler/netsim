@@ -25,7 +25,7 @@ Start the simulation with the following command:
 
 ```bash
 opp_run -u Qtenv \
-  -n ~/workspace/omnet/inet/src:~/workspace/omnet/src/layer2/ \
-  -l ~workspace/omnet/inet/out/clang-release/src/libINET.dylib \
+  -n $HOME/workspace/netsim/inet/src:$HOME/workspace/netsim/src/layer2/ \
+  -l $HOME/workspace/netsim/inet/out/clang-release/src/libINET.dylib \
   -c switching1 \
   -f switching.ini
