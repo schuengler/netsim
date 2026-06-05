@@ -1,0 +1,12 @@
+<vlanTable>
+    <vlan>
+        <id>10</id>
+        <ports>0,1</ports>
+    </vlan>
+    <vlan>
+        <id>20</id>
+        <ports>1</ports>
+    </vlan>
+</vlanTable>    
+</vlan>
+</vlanTable>
