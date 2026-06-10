@@ -1,0 +1,105 @@
+<config>
+
+    <!-- ========================= -->
+    <!-- Host A -->
+    <!-- ========================= -->
+
+    <interface hosts="hostA" names="eth0"
+               address="128.96.34.15"
+               netmask="255.255.255.128"/>
+
+    <route hosts="hostA"
+           destination="0.0.0.0"
+           netmask="0.0.0.0"
+           gateway="128.96.34.1"
+           interface="eth0"/>
+
+
+    <!-- ========================= -->
+    <!-- Router 1 -->
+    <!-- ========================= -->
+
+    <interface hosts="r1" names="eth0"
+               address="128.96.34.1"
+               netmask="255.255.255.128"/>
+
+    <interface hosts="r1" names="eth1"
+               address="128.96.34.130"
+               netmask="255.255.255.128"/>
+
+    <route hosts="r1"
+           destination="128.96.34.0"
+           netmask="255.255.255.128"
+           interface="eth0"/>
+
+    <route hosts="r1"
+           destination="128.96.34.128"
+           netmask="255.255.255.128"
+           interface="eth1"/>
+
+    <route hosts="r1"
+           destination="128.96.33.0"
+           netmask="255.255.255.0"
+           gateway="128.96.34.129"
+           interface="eth1"/>
+
+
+    <!-- ========================= -->
+    <!-- Router 2 -->
+    <!-- ========================= -->
+
+    <interface hosts="r2" names="eth0"
+               address="128.96.34.129"
+               netmask="255.255.255.128"/>
+
+    <interface hosts="r2" names="eth1"
+               address="128.96.33.1"
+               netmask="255.255.255.0"/>
+
+    <route hosts="r2"
+           destination="128.96.34.128"
+           netmask="255.255.255.128"
+           interface="eth0"/>
+
+    <route hosts="r2"
+           destination="128.96.33.0"
+           netmask="255.255.255.0"
+           interface="eth1"/>
+
+    <route hosts="r2"
+           destination="128.96.34.0"
+           netmask="255.255.255.128"
+           gateway="128.96.34.130"
+           interface="eth0"/>
+
+
+    <!-- ========================= -->
+    <!-- Host C -->
+    <!-- ========================= -->
+
+    <interface hosts="hostC" names="eth0"
+               address="128.96.34.139"
+               netmask="255.255.255.128"/>
+
+    <route hosts="hostC"
+           destination="0.0.0.0"
+           netmask="0.0.0.0"
+           gateway="128.96.34.130"
+           interface="eth0"/>
+
+
+    <!-- ========================= -->
+    <!-- Host D -->
+    <!-- ========================= -->
+
+    <interface hosts="hostD" names="eth0"
+               address="128.96.33.14"
+               netmask="255.255.255.0"/>
+
+    <route hosts="hostD"
+           destination="0.0.0.0"
+           netmask="0.0.0.0"
+           gateway="128.96.33.1"
+           interface="eth0"/>
+
+</config>
