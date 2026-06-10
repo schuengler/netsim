@@ -9,6 +9,31 @@
                netmask="255.255.255.128"/>
 
     <route hosts="hostA"
+           destination="128.96.34.0"
+           netmask="255.255.255.128"
+           interface="eth0"/>
+
+    <route hosts="hostA"
+           destination="0.0.0.0"
+           netmask="0.0.0.0"
+           gateway="128.96.34.1"
+           interface="eth0"/>
+
+
+    <!-- ========================= -->
+    <!-- Host B -->
+    <!-- ========================= -->
+
+    <interface hosts="hostB" names="eth0"
+               address="128.96.34.16"
+               netmask="255.255.255.128"/>
+
+    <route hosts="hostB"
+           destination="128.96.34.0"
+           netmask="255.255.255.128"
+           interface="eth0"/>
+
+    <route hosts="hostB"
            destination="0.0.0.0"
            netmask="0.0.0.0"
            gateway="128.96.34.1"
@@ -82,6 +107,11 @@
                netmask="255.255.255.128"/>
 
     <route hosts="hostC"
+           destination="128.96.34.128"
+           netmask="255.255.255.128"
+           interface="eth0"/>
+
+    <route hosts="hostC"
            destination="0.0.0.0"
            netmask="0.0.0.0"
            gateway="128.96.34.130"
@@ -95,6 +125,11 @@
     <interface hosts="hostD" names="eth0"
                address="128.96.33.14"
                netmask="255.255.255.0"/>
+
+    <route hosts="hostD"
+           destination="128.96.33.0"
+           netmask="255.255.255.0"
+           interface="eth0"/>
 
     <route hosts="hostD"
            destination="0.0.0.0"

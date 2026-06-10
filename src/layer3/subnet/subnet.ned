@@ -14,41 +14,23 @@ network subnet
             @display("p=450,50");
         }
 
-        hostA: StandardHost {
-            @display("p=100,120");
-        }
+        hostA: StandardHost { @display("p=100,120"); }
+        hostB: StandardHost { @display("p=100,200"); }
 
-        r1: Router {
-            @display("p=300,120");
-        }
+        r1: Router { @display("p=300,120"); }
+        r2: Router { @display("p=600,120"); }
 
-        r2: Router {
-            @display("p=600,120");
-        }
+        hostD: StandardHost { @display("p=800,120"); }
+        hostC: StandardHost { @display("p=450,420"); }
 
-        hostD: StandardHost {
-            @display("p=800,120");
-        }
-
-        sw1: EthernetSwitch {
-            @display("p=150,280");
-        }
-
-        sw2: EthernetSwitch {
-            @display("p=450,280");
-        }
-
-        sw3: EthernetSwitch {
-            @display("p=750,280");
-        }
-
-        hostC: StandardHost {
-            @display("p=450,420");
-        }
+        sw1: EthernetSwitch { @display("p=150,280"); }
+        sw2: EthernetSwitch { @display("p=450,280"); }
+        sw3: EthernetSwitch { @display("p=750,280"); }
 
     connections allowunconnected:
 
         hostA.ethg++ <--> Eth100M <--> sw1.ethg++;
+        hostB.ethg++ <--> Eth100M <--> sw1.ethg++;
         r1.ethg++    <--> Eth100M <--> sw1.ethg++;
 
         r1.ethg++    <--> Eth100M <--> sw2.ethg++;
