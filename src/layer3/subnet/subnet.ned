@@ -5,17 +5,20 @@ import inet.node.inet.Router;
 import inet.networklayer.configurator.ipv4.Ipv4NetworkConfigurator;
 import inet.node.ethernet.EthernetSwitch;
 import inet.node.ethernet.Eth100M;
+import inet.visualizer.common.IntegratedVisualizer;
 
 network subnet
 {
     submodules:
-
+        visualizer: IntegratedVisualizer {
+    @display("p=50,50");
+}
         configurator: Ipv4NetworkConfigurator {
             @display("p=450,50");
         }
 
         hostA: StandardHost { @display("p=100,120"); }
-        hostB: StandardHost { @display("p=100,200"); }
+        hostB: StandardHost { @display("p=100,420"); }
 
         r1: Router { @display("p=300,120"); }
         r2: Router { @display("p=600,120"); }
